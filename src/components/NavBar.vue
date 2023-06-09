@@ -54,11 +54,11 @@
       </form>
     </div>
       
-      <a href="" class="flex items-center float-right">
+      <button  class="flex items-center float-right">
 
         <img src="../assets/Resources/Screen 1/shopping-cart.png" class="w-6 h-6 sm:w-8 sm:h-8" alt="">
         
-      </a>
+      </button>
     </div>
   </nav>
 </template>

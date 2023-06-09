@@ -23,6 +23,7 @@ onMounted(async () => {
   initFlowbite();
   window.addEventListener("scroll", onScroll);
   store.getProducts();
+  store.getCategories();
 });
 
 const scroll = ref();
@@ -38,13 +39,13 @@ const promotionStyle = reactive({
 
 function onScroll(e) {
   scroll.value = window.top.scrollY;
-  console.log(scroll.value);
+
   if (scroll.value > 400 ) {
     promotionStyle.transition = "opacity 1s"
     promotionStyle.opacity = "1"
 
     // promotionStyle.opacity = promotionStyle.opacity + 0.025
-    // console.log("🚀 ~ file: App.vue:45 ~ onScroll ~ promotionStyle.opacity:", promotionStyle.opacity)
+
   }
   // else{
   //   if (promotionStyle.opacity > 0) {

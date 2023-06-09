@@ -1,4 +1,33 @@
-{
+{   "categories": [
+    {
+        "id": 1,
+        "name": "Fruit"
+    },
+    {
+        "id": 2,
+        "name": "Vegetable"
+    },
+    {
+        "id": 3,
+        "name": "Hygienic"
+    },
+    {
+        "id": 4,
+        "name": "Meat"
+    },
+    {
+        "id": 5,
+        "name": "Health"
+    },
+    {
+        "id":6,
+        "name": "Hygienic"
+    },
+    {
+        "id": 7,
+        "name": "seafood"
+    }
+    ],
     "products": [
         {
             "id": 1,
@@ -12,6 +41,14 @@
                 {
                     "id": 2,
                     "name": "Vegetable"
+                },
+                {
+                    "id": 3,
+                    "name": "Hygienic"
+                },
+                {
+                    "id": 5,
+                    "name": "Health"
                 }
             ],
             "desc": [
@@ -51,6 +88,14 @@
                 {
                     "id": 2,
                     "name": "Vegetable"
+                },
+                {
+                    "id": 3,
+                    "name": "Hygienic"
+                },
+                {
+                    "id": 5,
+                    "name": "Health"
                 }
             ],
             "desc": [
@@ -88,6 +133,14 @@
                 {
                     "id": 2,
                     "name": "Vegetable"
+                },
+                {
+                    "id": 3,
+                    "name": "Hygienic"
+                },
+                {
+                    "id": 5,
+                    "name": "Health"
                 }
             ],
             "desc": [
@@ -117,15 +170,15 @@
             "country": "Korea",
             "category": [
                 {
-                    "id": 1,
+                    "id": 4,
                     "name": "Meat"
                 },
                 {
-                    "id": 2,
+                    "id": 5,
                     "name": "Health"
                 },
                 {
-                    "id": 3,
+                    "id":6,
                     "name": "Hygienic"
                 }
             ],
@@ -156,15 +209,15 @@
             "country": "Korea",
             "category": [
                 {
-                    "id": 1,
+                    "id": 4,
                     "name": "Meat"
                 },
                 {
-                    "id": 2,
+                    "id": 5,
                     "name": "Health"
                 },
                 {
-                    "id": 3,
+                    "id":6,
                     "name": "Hygienic"
                 }
             ],
@@ -195,19 +248,19 @@
             "country": "Korea",
             "category": [
                 {
-                    "id": 1,
+                    "id": 4,
                     "name": "Meat"
                 },
                 {
-                    "id": 2,
+                    "id": 5,
                     "name": "Health"
                 },
                 {
-                    "id": 3,
+                    "id":6,
                     "name": "Hygienic"
                 },
                 {
-                    "id": 4,
+                    "id": 7,
                     "name": "seafood"
                 }
             ],

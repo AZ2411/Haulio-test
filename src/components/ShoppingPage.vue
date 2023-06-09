@@ -31,7 +31,7 @@
         </li>
         <li>
           <a
-            href="#"
+            
             class="flex items-center mt-3 p-3 text-gray-900 hover:bg-gray-200"
           >
             <span class="ml-3">New</span>
@@ -39,7 +39,7 @@
         </li>
         <li>
           <a
-            href="#"
+            
             class="flex items-center mt-3 p-3 text-gray-900 hover:bg-gray-200"
           >
             <span class="ml-3">Shop by Store</span>
@@ -47,7 +47,7 @@
         </li>
         <li>
           <a
-            href="#"
+            
             class="flex items-center mt-3 p-3 text-gray-900 hover:bg-gray-200"
           >
             <span class="ml-3">Fruit & Veg</span>
@@ -55,7 +55,7 @@
         </li>
         <li>
           <a
-            href="#"
+            
             class="flex items-center mt-3 p-3 text-gray-900 hover:bg-gray-200"
           >
             <span class="ml-3">Meat & Seafood</span>
@@ -63,7 +63,7 @@
         </li>
         <li>
           <a
-            href="#"
+            
             class="flex items-center mt-3 p-3 text-gray-900 hover:bg-gray-200"
           >
             <span class="ml-3">Dairy & Chilled</span>
@@ -71,7 +71,7 @@
         </li>
         <li>
           <a
-            href="#"
+            
             class="flex items-center mt-3 p-3 text-gray-900 hover:bg-gray-200"
           >
             <span class="ml-3">Bakery</span>
@@ -79,7 +79,7 @@
         </li>
         <li>
           <a
-            href="#"
+            
             class="flex items-center mt-3 p-3 text-gray-900 hover:bg-gray-200"
           >
             <span class="ml-3">Beverages</span>
@@ -90,43 +90,20 @@
     <!-- Side Bar -->
     <div
       style="left: 302px; top: 18px; background-color: #c8cdcf"
-      class="absolute w-44 overflow-y-auto font-bold z-50"
+      class="absolute w-44 overflow-y-auto font-bold z-10"
       :class="{ hidden: sideMenuStatus }"
     >
       <div class="h-full overflow-y-auto bg-gray-300">
         <ul class="space-y-2 font-medium">
-          <li>
+          <li v-for="category in store.categories">
             <a
-              href="#"
+              @click="filterByCategories(category.id)"
               class="flex items-center p-2 text-white hover:bg-gray-200"
             >
-              <span class="ml-3">Dashboard</span>
+              <span class="ml-3">{{ category.name }}</span>
             </a>
           </li>
-          <li>
-            <a
-              href="#"
-              class="flex items-center p-2 text-white hover:bg-gray-200"
-            >
-              <span class="ml-3">Dashboard</span>
-            </a>
-          </li>
-          <li>
-            <a
-              href="#"
-              class="flex items-center p-2 text-white hover:bg-gray-200"
-            >
-              <span class="ml-3">Dashboard</span>
-            </a>
-          </li>
-          <li>
-            <a
-              href="#"
-              class="flex items-center p-2 text-white hover:bg-gray-200"
-            >
-              <span class="ml-3">Dashboard</span>
-            </a>
-          </li>
+          
         </ul>
       </div>
     </div>
@@ -134,7 +111,7 @@
     <!-- card -->
     <div class="w-screen mt-5">
       <div class="grid grid-cols-3 px-10 ml-10">
-        <div v-for="product in store.rawProducts">
+        <div v-for="product in store.products">
           <Product :product="product" />
         </div>
       </div>
@@ -292,14 +269,14 @@
                   <div class="category grid grid-cols-3 lg:grip-cols-2">
                     <div
                       v-for="category in store.product.category"
-                      class="border rounded-lg w-20 text-center bg-yellow-400 text-white"
+                      class="border rounded-lg w-20 text-center bg-yellow-400 text-white mb-2"
                     >
                       {{ category.name }}
                     </div>
                   </div>
                 </div>
               </div>
-              <div class="action text-white absolute bottom-20 w-full h-16">
+              <div class="action text-white w-full h-16">
                 <form action="" class="h-full">
                   <div class="flex relative h-full">
                     <label
@@ -351,14 +328,6 @@
                           </li>
                         </ul>
                       </div>
-                      <!-- <select
-                        id="countries"
-                        class="qty text-center bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-20 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                      >
-                        <option selected>1</option>
-                        <option value="US">2</option>
-                        <option value="CA">3</option>
-                      </select> -->
                     </div>
                     <div
                       class="border rounded-xl text-white bg-yellow-400 py-2 xl:w-44 w-32 h-fit text-center cursor-pointer"
@@ -391,14 +360,14 @@ function opnSideMenu() {
 
 function nextImg() {
   totlaImg.value = store.product.images.length;
+  
+  
 
-  photoNumber.value = photoNumber.value + 1;
-
-  if (photoNumber.value < totlaImg.value) {
+  if (photoNumber.value + 1 < totlaImg.value) {
+    photoNumber.value = photoNumber.value + 1;
     let imgSrc = `/src/assets/Resources/Screen 3/products_image/${
       store.product.id
     }/${store.product.images[photoNumber.value].txt}`;
-    console.log(imgSrc);
     document.getElementById("modalImage").src = imgSrc;
   }
 }
@@ -406,21 +375,15 @@ function previousImg() {
   totlaImg.value = store.product.images.length;
 
   if (photoNumber.value > 0) {
-    console.log(photoNumber.value);
     photoNumber.value = photoNumber.value - 1;
-    console.log(photoNumber.value);
     let imgSrc = `/src/assets/Resources/Screen 3/products_image/${
       store.product.id
     }/${store.product.images[photoNumber.value].txt}`;
-    console.log(imgSrc);
     document.getElementById("modalImage").src = imgSrc;
   }
 }
 
-function resetPhotoNumber() {
-  photoNumber.value = 0;
-  store.product = null;
-}
+
 const inputNum = ref(1);
 const inputNum1 = ref(null);
 const inputNum2 = ref(null);
@@ -449,6 +412,13 @@ function handleBlur() {
 }
 function closeModel() {
   inputNum.value = 1;
+  photoNumber.value = 0;
+  store.product = null;
+}
+
+//Filter function 
+function filterByCategories(id){
+  store.filterById(id)
 }
 </script>
 <style scoped>
