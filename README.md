@@ -10,11 +10,9 @@ Clone this repo and run
 ```sh
 npm install
 ```
-### second step -> need to run json server
-```sh
-npx json-server --watch data/db.json
-```
-### final step -> need to run vue application FarmFresh
+
+### Compile and Hot-Reload for Development
+
 ```sh
 npm run dev
 ```
