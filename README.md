@@ -14,7 +14,7 @@ npm install
 ```sh
 npx json-server --watch data/db.json
 ```
-### Fiabk steo -> Compile and Hot-Reload for Development
+### Final step -> Compile and Hot-Reload for Development
 
 ```sh
 npm run dev
