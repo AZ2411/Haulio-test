@@ -10,8 +10,11 @@ Clone this repo and run
 ```sh
 npm install
 ```
-
-### Compile and Hot-Reload for Development
+### second step -> need to run json server in data/db.json
+```sh
+npx json-server --watch data/db.json
+```
+### Fiabk steo -> Compile and Hot-Reload for Development
 
 ```sh
 npm run dev
